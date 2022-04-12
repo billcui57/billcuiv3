@@ -11,7 +11,7 @@ const Help = () => {
       </ConsoleLine>
       <ConsoleLine>
         <Typography colour="green" size="base" text="* cd: " />
-        <Typography colour="text" size="base" text="change navigation" />
+        <Typography colour="text" size="base" text="change directory" />
       </ConsoleLine>
       <ConsoleLine>
         <Typography colour="green" size="base" text="* cat: " />
