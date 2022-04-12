@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Source Code Pro', monospace;
+  background-color: #282C34;
+}
+
+html {
+  height: 100% !important;
+}
