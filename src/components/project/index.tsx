@@ -38,7 +38,12 @@ function Project(props: ProjectProps) {
             <Image src={props.logo} width="32" height="32"></Image>
           </div>
         )}
-        <Typography colour="red" size="lg" text={props.title} />
+        <Typography
+          colour="red"
+          size="lg"
+          text={props.title}
+          className="text-center"
+        />
         {props.logo && (
           <div>
             <Image src={props.logo} width="32" height="32"></Image>

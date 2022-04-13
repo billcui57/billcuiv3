@@ -74,7 +74,7 @@ const HomeContainer = () => {
           <div className="flex justify-center">
             <SectionHead title="$ ls ~/projects"></SectionHead>
           </div>
-          <div className="flex flex-col space-y-32">
+          <div className="flex flex-col space-y-32 mt-4">
             {projects.map((project) => {
               return <div>{project.display}</div>;
             })}
@@ -84,7 +84,7 @@ const HomeContainer = () => {
           <div className="flex justify-center">
             <SectionHead title="$ vim ~/.contact_me"></SectionHead>
           </div>
-          <div className="flex space-x-4 justify-center mb-16">
+          <div className="flex space-x-4 justify-center mb-16 mt-4">
             <Button onClick={() => handleEmailClick()} type="transparent">
               <Typography colour="text" size="base" text={"Email"} />
             </Button>
