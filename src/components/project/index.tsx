@@ -45,9 +45,13 @@ function Project(props: ProjectProps) {
           </div>
         )}
       </div>
-      <div className="flex justify-center space-x-4">
+      <div className="flex flex-wrap justify-center space-x-4">
         {props.usedTechs.map((tech) => {
-          return <Typography colour="yellow" size="md" text={tech} />;
+          return (
+            <div>
+              <Typography colour="yellow" size="md" text={tech} />
+            </div>
+          );
         })}
       </div>
       <div className="flex justify-center">
