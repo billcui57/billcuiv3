@@ -118,4 +118,15 @@ export const projects: File[] = [
       ></Project>
     ),
   },
+  {
+    name: "ThePollingExpress-RTOS",
+    display: (
+      <Project
+        title="ThePollingExpress-RTOS"
+        description="A real time operating system + series of user tasks meant to control multiple Märklin trains for the University of Waterloo CS452 Real-time Programming course"
+        usedTechs={["C", "ARMv4"]}
+        projectLink="https://github.com/billcui57/The-Polling-Express"
+      ></Project>
+    ),
+  },
 ];
