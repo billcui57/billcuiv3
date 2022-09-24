@@ -10,24 +10,14 @@ import { useRouter } from "next/router";
 import SectionHead from "@/components/sectionHead";
 import { projects } from "@/components/console/files";
 import React from "react";
+import { LocalizationUtils } from "@/utils";
+import me from "@/constants/me";
 
 const HomeContainer = () => {
   const router = useRouter();
 
   const handleConsoleClick = () => {
     router.push("/console");
-  };
-
-  const handleEmailClick = () => {
-    window.open("mailto:billcui2001@hotmail.com");
-  };
-
-  const handleLinkedInClick = () => {
-    window.open("https://www.linkedin.com/in/billcui57/?originalSubdomain=ca");
-  };
-
-  const handleGithubClick = () => {
-    window.open("https://github.com/billcui57");
   };
 
   return (
@@ -54,7 +44,9 @@ const HomeContainer = () => {
           </div>
           <div className="flex justify-center">
             <Typography
-              text="Currently, I am a third year Computer Science student at the University of Waterloo"
+              text={`Currently, I am a ${LocalizationUtils.localizeYearNumber(
+                me.year
+              )} year Computer Science student at the University of Waterloo`}
               size="base"
               colour="text"
               className="text-center"
@@ -85,16 +77,24 @@ const HomeContainer = () => {
             <SectionHead title="$ vim ~/.contact_me"></SectionHead>
           </div>
           <div className="flex space-x-4 justify-center mb-16 mt-4">
-            <Button onClick={() => handleEmailClick()} type="transparent">
-              <Typography colour="text" size="base" text={"Email"} />
-            </Button>
-
-            <Button onClick={() => handleLinkedInClick()} type="transparent">
-              <Typography colour="text" size="base" text={"LinkedIn"} />
-            </Button>
-            <Button onClick={() => handleGithubClick()} type="transparent">
-              <Typography colour="text" size="base" text={"GitHub"} />
-            </Button>
+            <Typography
+              colour="text"
+              size="base"
+              text={"Email"}
+              link={LocalizationUtils.convertMailTo(me.contactEmail)}
+            />
+            <Typography
+              colour="text"
+              size="base"
+              text={"LinkedIn"}
+              link={me.linkedinLink}
+            />
+            <Typography
+              colour="text"
+              size="base"
+              text={"GitHub"}
+              link={me.githubLink}
+            />
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import ConsoleLine from "@/components/console/consoleLine";
 import Typography from "@/components/typography";
+import me from "@/constants/me";
+import { LocalizationUtils } from "@/utils";
 import React, { Component, useEffect, useState } from "react";
 
 const Welcome = () => {
@@ -21,7 +23,12 @@ const Welcome = () => {
           text="* Documentation: "
           indent={1}
         />
-        <Typography colour="text" size="base" text="Bill’s Resume" />
+        <Typography
+          colour="text"
+          size="base"
+          text="Bill’s Resume"
+          link={me.resumeLink}
+        />
       </ConsoleLine>
       <ConsoleLine>
         <Typography
@@ -33,7 +40,8 @@ const Welcome = () => {
         <Typography
           colour="text"
           size="base"
-          text="https://github.com/billcui57"
+          text={me.githubLink}
+          link={me.githubLink}
         />
       </ConsoleLine>
       <ConsoleLine>
@@ -41,12 +49,18 @@ const Welcome = () => {
         <Typography
           colour="text"
           size="base"
-          text="https://linkedin.com/in/billcui57"
+          text={me.linkedinLink}
+          link={me.linkedinLink}
         />
       </ConsoleLine>
       <ConsoleLine>
         <Typography colour="yellow" size="base" text="* Contact: " indent={1} />
-        <Typography colour="text" size="base" text="billcui2001@hotmail.com" />
+        <Typography
+          colour="text"
+          size="base"
+          text={me.contactEmail}
+          link={LocalizationUtils.convertMailTo(me.contactEmail)}
+        />
       </ConsoleLine>
       <ConsoleLine />
       <ConsoleLine>
@@ -68,7 +82,7 @@ const Welcome = () => {
         <Typography
           colour="text"
           size="base"
-          text="University of Waterloo Computer Science 3B"
+          text={`University of Waterloo Computer Science ${me.termLevel}`}
         />
       </ConsoleLine>
       <ConsoleLine>

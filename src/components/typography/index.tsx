@@ -27,6 +27,7 @@ type TypographyProps = {
   bold?: boolean;
   noWrap?: boolean;
   indent?: number;
+  link?: string;
 };
 
 const COLOURS = {
@@ -77,7 +78,19 @@ const Typography = (props: TypographyProps) => {
     return null;
   }
 
-  return <p className={classes}>{props.text}</p>;
+  const renderText = () => {
+    return <p className={classes}>{props.text}</p>;
+  };
+
+  if (props.link !== undefined) {
+    return (
+      <a href={props.link} className="hover:opacity-75">
+        {renderText()}
+      </a>
+    );
+  }
+
+  return renderText();
 };
 
 export default Typography;
