@@ -1,7 +1,10 @@
 export interface File {
   name: string;
   display: any
+  type: typeof projectTypes[number]
 }
+
+export const projectTypes = ["Web", "Systems", "AI"] as const
 
 
 

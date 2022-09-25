@@ -25,6 +25,7 @@ export const projects: File[] = [
         projectLink="https://library.mathsoc.uwaterloo.ca/"
       ></Project>
     ),
+    type: "Web",
   },
   {
     name: "MiniMaxBattleSnake",
@@ -40,6 +41,7 @@ export const projects: File[] = [
         logo={BattleSnakeLogo}
       ></Project>
     ),
+    type: "AI",
   },
   {
     name: "ToTheMoon",
@@ -61,6 +63,7 @@ export const projects: File[] = [
         logo={ToTheMoonLogo}
       ></Project>
     ),
+    type: "Web",
   },
   {
     name: "HTNEventBrowser",
@@ -74,6 +77,7 @@ export const projects: File[] = [
         learnMoreLink="https://github.com/billcui57/htn-2022-frontend-challenge"
       ></Project>
     ),
+    type: "Web",
   },
   {
     name: "DropShare",
@@ -96,6 +100,7 @@ export const projects: File[] = [
         learnMoreLink="https://github.com/billcui57/dropshare"
       ></Project>
     ),
+    type: "Web",
   },
   {
     name: "Lyricalculus",
@@ -117,6 +122,7 @@ export const projects: File[] = [
         learnMoreLink="https://devpost.com/software/lyricalculus"
       ></Project>
     ),
+    type: "Web",
   },
   {
     name: "ThePollingExpress-RTOS",
@@ -128,5 +134,6 @@ export const projects: File[] = [
         projectLink="https://github.com/billcui57/The-Polling-Express"
       ></Project>
     ),
+    type: "Systems",
   },
 ];
