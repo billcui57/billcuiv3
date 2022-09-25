@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable jsx-a11y/alt-text */
-import { Component, useEffect, useState } from "react";
+import { Component, Fragment, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Me from "public/me.jpg";
@@ -12,12 +12,34 @@ import { projects } from "@/components/console/files";
 import React from "react";
 import { LocalizationUtils } from "@/utils";
 import me from "@/constants/me";
+import { projectTypes } from "@/types";
 
 const HomeContainer = () => {
   const router = useRouter();
 
   const handleConsoleClick = () => {
     router.push("/console");
+  };
+
+  const displayProjects = () => {
+    return projectTypes.map((projectType) => {
+      return (
+        <Fragment>
+          <div className="flex justify-center mt-4 mb-4">
+            <SectionHead title={`$ grep ${projectType}`}></SectionHead>
+          </div>
+          <div className="flex flex-col space-y-32">
+            {projects
+              .filter((project) => {
+                return project.type === projectType;
+              })
+              .map((project) => {
+                return <div>{project.display}</div>;
+              })}
+          </div>
+        </Fragment>
+      );
+    });
   };
 
   return (
@@ -66,11 +88,7 @@ const HomeContainer = () => {
           <div className="flex justify-center">
             <SectionHead title="$ ls ~/projects"></SectionHead>
           </div>
-          <div className="flex flex-col space-y-32 mt-4">
-            {projects.map((project) => {
-              return <div>{project.display}</div>;
-            })}
-          </div>
+          {displayProjects()}
         </div>
         <div id="contactMe">
           <div className="flex justify-center">
