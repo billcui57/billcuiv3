@@ -8,11 +8,12 @@ import Typography from "@/components/typography";
 import Button from "@/components/button";
 import { useRouter } from "next/router";
 import SectionHead from "@/components/sectionHead";
-import { projects } from "@/components/console/files";
+import { projects, workExperiences } from "@/components/console/files";
 import React from "react";
 import { LocalizationUtils } from "@/utils";
 import me from "@/constants/me";
-import { projectTypes } from "@/types";
+import { projectTypes } from "@/types";import { displayProject, displayWorkExperience } from "@/utils/display";
+;
 
 const HomeContainer = () => {
   const router = useRouter();
@@ -24,8 +25,8 @@ const HomeContainer = () => {
   const displayProjects = () => {
     return projectTypes.map((projectType) => {
       return (
-        <Fragment>
-          <div className="flex justify-center mt-4 mb-4">
+        <div className="mb-16">
+          <div className="mt-4 mb-4">
             <SectionHead title={`$ grep ${projectType}`}></SectionHead>
           </div>
           <div className="flex flex-col space-y-32">
@@ -34,13 +35,26 @@ const HomeContainer = () => {
                 return project.type === projectType;
               })
               .map((project) => {
-                return <div>{project.display}</div>;
+                return <div>{displayProject(project)}</div>;
               })}
           </div>
-        </Fragment>
+        </div>
       );
     });
   };
+
+  const displayWorkExperiences = () => {
+    return workExperiences.map((workExperience) => {
+      return (
+        <div className="mb-16">
+        <div className="flex flex-col space-y-32">
+          <div>{displayWorkExperience(workExperience)}</div>
+         
+        </div>
+      </div>
+      )
+    })
+  }
 
   return (
     <div className="px-8 lg:px-32 mt-16">
@@ -79,10 +93,16 @@ const HomeContainer = () => {
           <Button onClick={() => handleConsoleClick()} type="transparent">
             <Typography
               colour="red"
-              size="base"
+              size="lg"
               text={"Familiar with Linux? Click here"}
             />
           </Button>
+        </div>
+        <div id="workexperiences">
+          <div className="flex justify-center mb-4">
+            <SectionHead title="$ ls ~/workexperiences"></SectionHead>
+          </div>
+          {displayWorkExperiences()}
         </div>
         <div id="projects">
           <div className="flex justify-center">

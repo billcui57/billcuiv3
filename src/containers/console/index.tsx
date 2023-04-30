@@ -5,31 +5,34 @@ import Welcome from "@/components/console/welcome";
 import Help from "@/components/console/help";
 import React, { Component, useEffect, useState } from "react";
 import ConsoleInputLine from "@/components/console/consoleInputLine";
-import { Directory } from "@/types";
+import { IDirectory } from "@/types";
 import _ from "lodash";
 import ListDirectory from "@/components/console/listDirectory";
 import ErrorLine from "@/components/console/errorLine";
 import ConsoleInputHistoryLine from "@/components/console/consoleInputHistoryLine";
-import { projects } from "@/components/console/files";
+import { projects, workExperiences } from "@/components/console/files";
 import { useRouter } from "next/router";
+import { displayFile } from "@/utils/display";
 
 const ConsoleContainer = () => {
   let [userInput, setUserInput] = useState<String>();
   let [screen, setScreen] = useState<any[]>([<Welcome key="welcome" />]);
-  let [currDir, setCurrDir] = useState<Directory>(() => initializeDir());
+  let [currDir, setCurrDir] = useState<IDirectory>(() => initializeDir());
   const router = useRouter();
 
   function initializeDir() {
     //returns rootDir
-    let rootDir = new Directory("", [], [], undefined);
+    let rootDir = new IDirectory("", [], [], undefined);
 
-    let projDir = new Directory("projects", [], projects, rootDir);
+    let projDir = new IDirectory("projects", [], projects, rootDir);
 
-    let hackathons = new Directory("hackathons", [], [], rootDir);
+    // let hackathons = new IDirectory("hackathons", [], [], rootDir);
 
-    let internships = new Directory("internships", [], [], rootDir);
+    let workExperience = new IDirectory("workexperiences", [], workExperiences, rootDir);
 
-    rootDir.subdirectories = [projDir, hackathons, internships];
+    // rootDir.subdirectories = [projDir, hackathons, workExperience];
+
+    rootDir.subdirectories = [projDir, workExperience];
 
     return rootDir;
   }
@@ -164,7 +167,7 @@ const ConsoleContainer = () => {
         if (cand) {
           finalScreen = [
             ...finalScreen,
-            <div className="mx-16">{cand.display}</div>,
+            <div className="mx-16">{displayFile(cand)}</div>,
           ];
         } else {
           finalScreen = [

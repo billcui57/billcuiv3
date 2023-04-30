@@ -6,19 +6,11 @@ import Image from "next/image";
 import _ from "lodash";
 import GithubLogo from "/public/githubLogo.png";
 import Button from "@/components/button";
+import { IProject } from "@/types";
 
-interface ProjectProps {
-  usedTechs: any[];
-  description: any;
-  title: any;
-  image?: any;
-  logo?: any;
-  learnMoreLink?: any;
-  projectLink?: any;
-  achievements?: string[];
-}
 
-function Project(props: ProjectProps) {
+
+function Project(props: IProject) {
   const handleProjectLinkClick = () => {
     if (props.projectLink) {
       window.open(props.projectLink, "_blank").focus();
@@ -33,22 +25,22 @@ function Project(props: ProjectProps) {
   return (
     <div className="flex flex-col space-y-2">
       <div className="flex justify-center space-x-4 px-8 items-center">
-        {props.logo && (
+        {/* {props.logo && (
           <div>
             <Image src={props.logo} width="32" height="32"></Image>
           </div>
-        )}
+        )} */}
         <Typography
           colour="red"
           size="lg"
-          text={props.title}
+          text={props.name}
           className="text-center"
         />
-        {props.logo && (
+        {/* {props.logo && (
           <div>
             <Image src={props.logo} width="32" height="32"></Image>
           </div>
-        )}
+        )} */}
       </div>
       <div className="flex flex-wrap justify-center space-x-4">
         {props.usedTechs.map((tech) => {
