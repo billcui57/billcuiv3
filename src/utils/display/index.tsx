@@ -1,5 +1,5 @@
 import { IFile, IProject, IWorkExperience } from "@/types";
-import Project from "@/components/Project";
+import Project from "@/components/project";
 import WorkExperience from "@/components/workexperience";
 
 function isProject(file: IFile): file is IProject {
