@@ -109,7 +109,7 @@ export const workExperiences: IWorkExperience[] = [
     company: "Faire",
     startDate: "Sept 2022",
     endDate: "Dec 2022",
-    description: "Developer API Platform Team",
+    description: "Retailer Acquisition Team",
     position: "Backend Software Engineering Intern",
     location: "Waterloo, Ontario",
     usedTechs:["Kotlin", "React"],
