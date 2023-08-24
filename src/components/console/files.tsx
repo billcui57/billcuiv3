@@ -11,6 +11,7 @@ import CartaLogo from "public/cartaLogo.png";
 import FaireLogo from "public/faireLogo.png";
 import RBCLogo from "public/rbcLogo.png";
 import KritikLogo from "public/kritikLogo.jpeg";
+import Carta from "public/carta.jpeg"
 
 export const projects: IProject[] = [
   {
@@ -85,7 +86,7 @@ export const projects: IProject[] = [
 export const workExperiences: IWorkExperience[] = [
   {
     name: "Tesla",
-    company: "Tesla (Incoming)",
+    company: "Tesla",
     startDate: "Sept 2023",
     endDate: "Dec 2023",
     description: "Vehicle Systems Integration and Tools Team",
@@ -96,12 +97,14 @@ export const workExperiences: IWorkExperience[] = [
   },
   {
     name: "Carta",
-    company: "Carta (Incoming)",
+    company: "Carta",
     startDate: "May 2023",
     endDate: "Aug 2023",
     description: "Developer API Platform Team",
     position: "Backend Software Engineering Intern",
     location: "Waterloo, Ontario",
+    usedTechs:["Kubernetes", "Helm", "Docker","Python", "React"],
+    image: Carta,
     logo:CartaLogo
   },
   {
