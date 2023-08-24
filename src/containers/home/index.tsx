@@ -22,6 +22,10 @@ const HomeContainer = () => {
     router.push("/console");
   };
 
+  const handleResumeClick = () => {
+    window.open("https://billcui-workstuff.s3.us-east-2.amazonaws.com/Backend_Resume.pdf")
+  };
+
   const displayProjects = () => {
     return projectTypes.map((projectType) => {
       return (
@@ -88,7 +92,17 @@ const HomeContainer = () => {
               className="text-center"
             ></Typography>
           </div>
+          <div className="flex justify-center">
+            <Button onClick={() => handleResumeClick()} type="transparent">
+              <Typography
+                  colour="green"
+                  size="lg"
+                  text={"View my resume"}
+              />
+            </Button>
+          </div>
         </div>
+
         <div className="flex justify-center">
           <Button onClick={() => handleConsoleClick()} type="transparent">
             <Typography
