@@ -23,7 +23,7 @@ const HomeContainer = () => {
   };
 
   const handleResumeClick = () => {
-    window.open("https://billcui-workstuff.s3.us-east-2.amazonaws.com/Backend_Resume.pdf")
+    window.open("https://billcui-workstuff.s3.us-east-2.amazonaws.com/Bill_Cui_Resume.pdf")
   };
 
   const displayProjects = () => {
