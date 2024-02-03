@@ -76,7 +76,7 @@ const HomeContainer = () => {
           </div>
           <div className="flex justify-center">
             <Typography
-              text="I am a software developer who is always learning new things"
+              text="I am a software developer who is passionate about building products that make tech move faster"
               size="base"
               colour="text"
               className="text-center"

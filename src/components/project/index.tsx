@@ -87,11 +87,11 @@ function Project(props: IProject) {
           </Button>
         </div>
       )}
-      {props.image && (
-        <div className="flex justify-center mt-1">
-          <Image src={props.image} width="750" height="500"></Image>
-        </div>
-      )}
+      {/*{props.image && (*/}
+      {/*  <div className="flex justify-center mt-1">*/}
+      {/*    <Image src={props.image} width="750" height="500"></Image>*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </div>
   );
 }

@@ -46,11 +46,11 @@ function WorkExperience(props: IWorkExperience) {
       <div className="flex justify-center">
         <Typography colour="text" size="base" text={props.description} />
       </div>
-      {props.image && (
-        <div className="flex justify-center mt-1">
-          <Image src={props.image} width="750" height="500" objectFit="contain"></Image>
-        </div>
-      )}
+      {/*{props.image && (*/}
+      {/*  <div className="flex justify-center mt-1">*/}
+      {/*    <Image src={props.image} width="750" height="500" objectFit="contain"></Image>*/}
+      {/*  </div>*/}
+      {/*)}*/}
     </div>
   );
 }
