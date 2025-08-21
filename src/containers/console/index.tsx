@@ -32,7 +32,7 @@ const ConsoleContainer = () => {
 
     // rootDir.subdirectories = [projDir, hackathons, workExperience];
 
-    rootDir.subdirectories = [projDir, workExperience];
+    rootDir.subdirectories = [workExperience];
 
     return rootDir;
   }

@@ -53,7 +53,6 @@ const HomeContainer = () => {
         <div className="mb-16">
         <div className="flex flex-col space-y-32">
           <div>{displayWorkExperience(workExperience)}</div>
-         
         </div>
       </div>
       )
@@ -76,7 +75,7 @@ const HomeContainer = () => {
           </div>
           <div className="flex justify-center">
             <Typography
-              text="I am a software developer who is passionate about building products that make tech move faster"
+              text="I build for productivity"
               size="base"
               colour="text"
               className="text-center"
@@ -84,9 +83,7 @@ const HomeContainer = () => {
           </div>
           <div className="flex justify-center">
             <Typography
-              text={`Currently, I am a ${LocalizationUtils.localizeYearNumber(
-                me.year
-              )} year Computer Science student at the University of Waterloo`}
+              text={`Currently, I am a software engineer at Tesla`}
               size="base"
               colour="text"
               className="text-center"
@@ -117,12 +114,6 @@ const HomeContainer = () => {
             <SectionHead title="$ ls ~/workexperiences"></SectionHead>
           </div>
           {displayWorkExperiences()}
-        </div>
-        <div id="projects">
-          <div className="flex justify-center">
-            <SectionHead title="$ ls ~/projects"></SectionHead>
-          </div>
-          {displayProjects()}
         </div>
         <div id="contactMe">
           <div className="flex justify-center">

@@ -11,7 +11,7 @@ const Welcome = () => {
         <Typography
           colour="red"
           size="base"
-          text="💻 Welcome to ✨Bill Cui’s Website✨ LTS (GNU/Linux
+          text="💻 Welcome to Bill Cui’s Website LTS (GNU/Linux
           4.19.104-microsoft-standard x86_64) 💻"
         />
       </ConsoleLine>
@@ -76,13 +76,13 @@ const Welcome = () => {
         <Typography
           colour="yellow"
           size="base"
-          text="Education Status: "
+          text="User group: "
           indent={1}
         />
         <Typography
           colour="text"
           size="base"
-          text={`University of Waterloo Computer Science ${me.termLevel}`}
+          text={`Tesla`}
         />
       </ConsoleLine>
       <ConsoleLine>
